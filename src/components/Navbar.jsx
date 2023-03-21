@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import logoDark from "../assets/logoDark.png";
 import { useState } from "react";
 
 import "react-modern-drawer/dist/index.css";
@@ -12,22 +12,19 @@ function Navbar() {
   const menuItems = (
     <>
       <Link className="navHover" href={"/"}>
-        HOME
+        Home
       </Link>
       <Link className="navHover" href={"/Programs"}>
-        PROGRAMS
+        Our Taxi
       </Link>
       <Link className="navHover" href={"/Counselling"}>
-        COUNSELING
-      </Link>
-      <Link className="navHover" href={"/Blog"}>
-        BLOG
+        Services
       </Link>
       <Link className="navHover" href={"#"}>
-        ABOUT US
+        Contact
       </Link>
       <Link className="navHover" href={"#"}>
-        CONTACT US
+        About
       </Link>
     </>
   );
@@ -39,16 +36,10 @@ function Navbar() {
   return (
     <>
       {/* Navbar top */}
-      <div className="bg-[#f3f3f3] py-3 px-4 md:px-8 hidden lg:block">
+      <div className="bg-[#f3f3f3] py-3 pb-5 px-4 md:px-8 hidden lg:block">
         <div className="px-4 md:px-0 flex justify-between items-center container">
           <div className="[&>*]:text-xs space-x-5">
-            <a className="hoverStyle" href="tel:+6494461709">
-              +880 1938 688488
-            </a>
-            <a className="hoverStyle" href="mailto:dogood@qodeinteractive.com">
-              bonefire@donation.com
-            </a>
-            <span className="hoverStyle">Nikanjia-2 Dhaka, Bangladesh</span>
+            Reliable Taxi Service & Transport Solutions!
           </div>
           {/* Social Icons */}
           <div className="flex gap-5 items-center ">
@@ -88,18 +79,16 @@ function Navbar() {
                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
               </svg>
             </a>
+            <Link className=" border-l-2 pl-4 ">Register</Link>
           </div>
         </div>
       </div>
 
       {/* Navbar */}
-      <div className="px-4 md:px-8 border-b-2 mb-4 py-3.5 pt-5 sticky top-0 z-50 bg-white navbar">
+      <div className="px-4 md:px-8 border-b-2 py-3.5 pt-5 sticky top-0 z-50 bg-white navbar">
         <div className="flex justify-between items-center relative container">
           <Link href={"/"} className="flex justify-center items-center">
-            <img className="w-[60px]" src={logo} alt="" />
-            <p className="uppercase leading-4 ml-1">
-              Heart <br /> To <br /> Serve
-            </p>
+            <img className="w-[160px]" src={logoDark} alt="" />
           </Link>
           <div className="text-md xl:text-lg text-[#303030] space-x-7 hidden lg:block ">
             {menuItems}
@@ -116,9 +105,25 @@ function Navbar() {
                 </svg>
               </Link>
             </div>
-            <div className="tracking-wider px-6 py-2 rounded-lg border border-black hover:bg-[#F36A4F] hover:text-white hover:border-current transition-all duration-200">
-              <Link href={"#"}>DONATE NOW</Link>
-            </div>
+
+            {/*  hamburger sidebar */}
+
+            {/* <div>
+              <label htmlFor="my-drawer-4" className="cursor-pointer">
+                <svg viewBox="0 0 100 70" width="30" height="40">
+                  <rect width="100" height="6"></rect>
+                  <rect y="30" width="100" height="6"></rect>
+                  <rect y="60" width="100" height="6"></rect>
+                </svg>
+              </label>
+            </div> */}
+
+            <Link
+              className="text-white px-[30px] text-md py-2.5 bg-[#222] hover:bg-[#F36A4F] hover:text-white hover:border-current transition-all duration-200"
+              href={"#"}
+            >
+              Book a Taxi
+            </Link>
           </div>
 
           {/* custom hamburger button */}
