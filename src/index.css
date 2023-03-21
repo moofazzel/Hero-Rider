@@ -76,3 +76,12 @@
   transform: rotate(-45deg);
   margin-top: 0;
 }
+
+.radio input ~ label {
+  background-color: rgb(240, 238, 238);
+  color: rgb(158, 146, 146);
+}
+.radio input:checked ~ label {
+  background-color: #f90;
+  color: white;
+}

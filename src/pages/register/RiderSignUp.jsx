@@ -9,7 +9,7 @@ import { RiEyeCloseLine } from "react-icons/ri";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { toast } from "react-toastify";
 
-const LearnerSignUp = () => {
+const RiderSignUp = () => {
   const {
     register,
     formState: { errors },
@@ -102,7 +102,6 @@ const LearnerSignUp = () => {
     e.preventDefault();
     isDisplayText === true ? setIsDisplayText(false) : setIsDisplayText(true);
   };
-
   return (
     <section className=" register_section lg:py-20 py-14 bg-nudeBlue">
       <div className="container mx-auto lg:max-w-7xl md:px-10 px-6">
@@ -114,7 +113,6 @@ const LearnerSignUp = () => {
             onSubmit={handleSubmit(handleSignUp)}
             className="flex flex-col gap-4 text-left"
           >
-            {/* user full name */}
             <div className="mb-1">
               <label
                 for="email"
@@ -139,7 +137,6 @@ const LearnerSignUp = () => {
                 <p className="text-red-500 mt-1">{errors.name.message}</p>
               )}
             </div>
-            {/* user email */}
             <div className="mb-1">
               <label
                 for="email"
@@ -273,7 +270,141 @@ const LearnerSignUp = () => {
                 <p className="text-red-500 mt-1">{errors.nidPhoto.message}</p>
               )}
             </div>
+            {/* Driving licsence pic */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Driving license Photo
+              </label>
 
+              <input
+                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                id="multiple_files"
+                type="file"
+                multiple
+                placeholder=" Driving license Photo"
+                {...register("licsensePhoto", {
+                  required: " Driving license Photo is required",
+                })}
+              />
+
+              {errors.licsensePhoto && (
+                <p className="text-red-500 mt-1">
+                  {errors.licsensePhoto.message}
+                </p>
+              )}
+            </div>
+            {/* vehicle type */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Vehicle Type
+              </label>
+              <select
+                id="types"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                {...register("vehicleType", {
+                  required: "Vehicle type is required",
+                })}
+              >
+                <option selected>Choose a Vehicle type</option>
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+              </select>
+              {errors.vehicleType && (
+                <p className="text-red-500 mt-1">
+                  {errors.vehicleType.message}
+                </p>
+              )}
+            </div>
+            {/* area */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Your Area
+              </label>
+
+              <input
+                type="text"
+                className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                  errors.area
+                    ? " border border-red-500 focus:border-red-500"
+                    : " border border-gray-300 focus:border-blue-500"
+                }`}
+                placeholder="Your Area"
+                {...register("area", {
+                  required: "Area is required",
+                })}
+              />
+              {errors.area && (
+                <p className="text-red-500 mt-1">{errors.area.message}</p>
+              )}
+            </div>
+            {/* Car Name */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Car Name
+              </label>
+
+              <input
+                type="text"
+                className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                  errors.carName
+                    ? " border border-red-500 focus:border-red-500"
+                    : " border border-gray-300 focus:border-blue-500"
+                }`}
+                placeholder="Car Name"
+                {...register("carName", {
+                  required: "Car Name is required",
+                })}
+              />
+              {errors.carName && (
+                <p className="text-red-500 mt-1">{errors.carName.message}</p>
+              )}
+            </div>
+            {/* Car Model */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Car Model
+              </label>
+
+              <input
+                type="text"
+                className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                  errors.carModel
+                    ? " border border-red-500 focus:border-red-500"
+                    : " border border-gray-300 focus:border-blue-500"
+                }`}
+                placeholder="Car Model"
+                {...register("carModel", {
+                  required: "Car Model is required",
+                })}
+              />
+              {errors.carModel && (
+                <p className="text-red-500 mt-1">{errors.carModel.message}</p>
+              )}
+            </div>
+            {/* Car Name Plate */}
+            <div className="mb-1">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Car Name Plate
+              </label>
+
+              <input
+                type="text"
+                className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                  errors.carNamePlate
+                    ? " border border-red-500 focus:border-red-500"
+                    : " border border-gray-300 focus:border-blue-500"
+                }`}
+                placeholder="Car Name Plate"
+                {...register("carNamePlate", {
+                  required: "Car Name Plate is required",
+                })}
+              />
+              {errors.carNamePlate && (
+                <p className="text-red-500 mt-1">
+                  {errors.carNamePlate.message}
+                </p>
+              )}
+            </div>
             {/* user password */}
             <div className="mb-1 relative">
               <label
@@ -390,4 +521,4 @@ const LearnerSignUp = () => {
   );
 };
 
-export default LearnerSignUp;
+export default RiderSignUp;
